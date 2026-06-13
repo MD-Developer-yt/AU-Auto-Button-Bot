@@ -82,27 +82,27 @@ START_TEXT = """
 ABOUT_TEXT = """
 <b>ℹ️ AU Auto Button Bot</b>
 
-🤖 Nᴀᴍᴇ : 
-<a href="https://t.me/AU_AutoButtonAdder_bot">AU Auto Button Bot</a>
+<b>
+🤖 Nᴀᴍᴇ : <a href="https://t.me/AU_AutoButtonAdder_bot">AU Auto Button Bot</a>
 
 📚 Lɪʙʀᴀʀʏ : Pʏʀᴏɢʀᴀᴍ 2.0
 
 💻 Lᴀɴɢᴜᴀɢᴇ : Pʏᴛʜᴏɴ 𝟹
 
-⚙️ Sᴇʀᴠᴇʀ : 
-<a href="https://render.com/">Rᴇɴᴅᴇʀ</a>
+⚙️ Sᴇʀᴠᴇʀ : <a href="https://render.com/">Rᴇɴᴅᴇʀ</a>
 
-🚀 Bᴜɪʟᴅ Sᴛᴀᴛᴜs : 
-<a href="https://t.me/Mr_Mohammed_29">Sᴛᴀʙʟᴇ ✅</a>
+🗄️ Dᴀᴛᴀʙᴀsᴇ : MᴏɴɢᴏDB
 
-👨‍💻 Pʀᴏɢʀᴀᴍᴍᴇʀ :
-<a href="https://t.me/Mr_Mohammed_29">Mᴏʜᴀᴍᴍᴇᴅ</a>
+🚀 Bᴜɪʟᴅ Sᴛᴀᴛᴜs : <a href="https://t.me/Mr_Mohammed_29">Sᴛᴀʙʟᴇ ✅</a>
 
-📢 Uᴘᴅᴀᴛᴇs :
-<a href="https://t.me/Anime_UpdatesAU">Cʟɪᴄᴋ Hᴇʀᴇ</a>
+👨‍💻 Pʀᴏɢʀᴀᴍᴍᴇʀ : <a href="https://t.me/Mr_Mohammed_29">Mᴏʜᴀᴍᴍᴇᴅ</a>
 
-🌐 Sᴏᴜʀᴄᴇ Cᴏᴅᴇ :
-<a href="https://github.com/MD-Developer-yt/AU_Auto-Button-Bot">Gɪᴛʜᴜʙ</a>
+📢 Uᴘᴅᴀᴛᴇs : <a href="https://t.me/Anime_UpdatesAU">Anime Updates AU</a>
+
+🌐 Sᴏᴜʀᴄᴇ Cᴏᴅᴇ : <a href="https://github.com/MD-Developer-yt/AU_Auto-Button-Bot">Gɪᴛʜᴜʙ</a>
+</b>
+
+<b>⍟──────────────⍟</b>
 """
 
 
