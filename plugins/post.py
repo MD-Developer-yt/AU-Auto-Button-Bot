@@ -3,6 +3,8 @@
 # Owner @Mr_Mohammed_29
 # ------------------------- #
 
+import plugins.thumbnail as thumb
+
 from pyrogram import (
     Client,
     filters
@@ -24,11 +26,8 @@ from plugins.logs import send_log
 
 
 # ------------------------- #
-# THUMBNAIL SYSTEM
+# ADMIN CHECK
 # ------------------------- #
-
-THUMBNAIL = None
-
 
 async def allowed(uid):
 
@@ -51,40 +50,6 @@ keyboard = InlineKeyboardMarkup(
         for row in BUTTONS
     ]
 )
-
-
-# ------------------------- #
-# THUMBNAIL COMMAND
-# ------------------------- #
-
-@Client.on_message(
-    filters.command("thumbnail")
-    & filters.private
-)
-
-async def thumbnail(_, message):
-
-    global THUMBNAIL
-
-    if message.from_user.id != OWNER_ID:
-        return
-
-
-    if not message.reply_to_message or not message.reply_to_message.photo:
-
-        return await message.reply_text(
-            "Reply to an image with /thumbnail"
-        )
-
-
-    THUMBNAIL = await message.reply_to_message.download(
-        file_name="thumbnail.jpg"
-    )
-
-
-    await message.reply_text(
-        "✅ Thumbnail Saved"
-    )
 
 
 # ------------------------- #
@@ -141,34 +106,22 @@ async def post(_, message):
 
         elif message.video:
 
-            thumb = None
-
-            if THUMBNAIL:
-                thumb = THUMBNAIL
-
-
             await _.send_video(
                 CHANNEL_ID,
                 message.video.file_id,
                 caption=message.caption or "",
-                thumb=thumb,
+                thumb=thumb.THUMBNAIL,
                 reply_markup=keyboard
             )
 
 
         elif message.document:
 
-            thumb = None
-
-            if THUMBNAIL:
-                thumb = THUMBNAIL
-
-
             await _.send_document(
                 CHANNEL_ID,
                 message.document.file_id,
                 caption=message.caption or "",
-                thumb=thumb,
+                thumb=thumb.THUMBNAIL,
                 reply_markup=keyboard
             )
 
