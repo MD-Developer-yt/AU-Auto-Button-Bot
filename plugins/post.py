@@ -8,20 +8,10 @@ from pyrogram import (
     filters
 )
 
-# ------------------------- #
-# Don't Remove Credit 
-# Owner @Mr_Mohammed_29
-# ------------------------- #
-
 from pyrogram.types import (
     InlineKeyboardMarkup,
     InlineKeyboardButton
 )
-
-# ------------------------- #
-# Don't Remove Credit 
-# Owner @Mr_Mohammed_29
-# ------------------------- #
 
 from config import (
     CHANNEL_ID,
@@ -30,26 +20,24 @@ from config import (
 )
 
 from database import is_admin
-
 from plugins.logs import send_log
 
+
 # ------------------------- #
-# Don't Remove Credit 
-# Owner @Mr_Mohammed_29
+# THUMBNAIL SYSTEM
 # ------------------------- #
+
+THUMBNAIL = None
+
 
 async def allowed(uid):
 
     if uid == OWNER_ID:
-
         return True
 
     return await is_admin(uid)
 
-# ------------------------- #
-# Don't Remove Credit 
-# Owner @Mr_Mohammed_29
-# ------------------------- #
+
 
 keyboard = InlineKeyboardMarkup(
     [
@@ -64,9 +52,45 @@ keyboard = InlineKeyboardMarkup(
     ]
 )
 
+
+
 # ------------------------- #
-# Don't Remove Credit 
-# Owner @Mr_Mohammed_29
+# THUMBNAIL COMMAND
+# ------------------------- #
+
+@Client.on_message(
+    filters.command("thumbnail")
+    & filters.private
+)
+
+async def thumbnail(_, message):
+
+    global THUMBNAIL
+
+    if message.from_user.id != OWNER_ID:
+        return
+
+
+    if not message.reply_to_message or not message.reply_to_message.photo:
+
+        return await message.reply_text(
+            "Reply to an image with /thumbnail"
+        )
+
+
+    THUMBNAIL = (
+        message.reply_to_message.photo.file_id
+    )
+
+
+    await message.reply_text(
+        "✅ Thumbnail Saved"
+    )
+
+
+
+# ------------------------- #
+# POST SYSTEM
 # ------------------------- #
 
 @Client.on_message(
@@ -78,15 +102,11 @@ keyboard = InlineKeyboardMarkup(
             "broadcast",
             "addadmin",
             "removeadmin",
-            "admins"
+            "admins",
+            "thumbnail"
         ]
     )
 )
-
-# ------------------------- #
-# Don't Remove Credit 
-# Owner @Mr_Mohammed_29
-# ------------------------- #
 
 async def post(_, message):
 
@@ -101,6 +121,7 @@ async def post(_, message):
 
 
     try:
+
 
         if message.text:
 
@@ -127,6 +148,7 @@ async def post(_, message):
                 CHANNEL_ID,
                 message.video.file_id,
                 caption=message.caption or "",
+                thumb=THUMBNAIL,
                 reply_markup=keyboard
             )
 
@@ -137,8 +159,10 @@ async def post(_, message):
                 CHANNEL_ID,
                 message.document.file_id,
                 caption=message.caption or "",
+                thumb=THUMBNAIL,
                 reply_markup=keyboard
             )
+
 
 
         await message.reply_text(
