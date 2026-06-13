@@ -34,7 +34,7 @@
 
 ## 🤖 Demo Bot
 
-**Bot:** <a href="https://t.me/AU_AutoButtonAdder_bot">AU Auto Button Bot</a>
+**Bot:** <a href="https://t.me/AU_AutoButtonsAdder_bot">AU Auto Button Bot</a>
 
 ---
 
@@ -50,7 +50,9 @@
 | LOG_CHANNEL | Log Channel ID |
 | MONGO_URI | Database URL |
 
- 'Add More To Add in config.py'
+ ``Note : Check Out config.py, replace with your Values
+``
+
 </details>
 
 ---
