@@ -120,3 +120,21 @@ API_HASH
 OWNER_ID  
 LOG_CHANNEL  
 MONGO_URI
+
+----
+
+## 👨‍💻 Developer
+
+<a href="https://t.me/Mr_Mohammed_29">ᴍᴏʜᴀᴍᴍᴇᴅ</a>
+
+---
+
+## ⭐ Fork & Star This Repo
+
+<p align="center">
+If you like this bot, please give it a ⭐ on GitHub.
+
+<a href="https://github.com/MD-Developer-yt/AU-Auto-Button-bot">
+⭐ Star Repository
+</a>
+</p>
