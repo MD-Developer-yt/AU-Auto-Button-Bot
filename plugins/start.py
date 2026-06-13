@@ -1,3 +1,4 @@
+
 # ------------------------- #
 # Don't Remove Credit
 # Owner @Mr_Mohammed_29
@@ -57,6 +58,7 @@ def buttons():
         ]
     )
 
+
 # ------------------------- #
 # Don't Remove Credit 
 # Owner @Mr_Mohammed_29
@@ -66,6 +68,7 @@ def buttons():
     filters.command("start")
     & filters.private
 )
+
 async def start(client, message):
 
     await add_user(
@@ -73,50 +76,39 @@ async def start(client, message):
     )
 
 
-    async def run_animation():
-
-        m = await message.reply_text(
-            "ᴍᴏɴᴋᴇʏ ᴅ ʟᴜғғʏ\nɢᴇᴀʀ 𝟻..."
-        )
+    m = await message.reply_text(
+        "ᴍᴏɴᴋᴇʏ ᴅ ʟᴜғғʏ\nɢᴇᴀʀ 𝟻..."
+    )
 
 
+    for text in [
+        "🎊",
+        "🚀",
+        "sᴜɴ ɢᴏᴅ ɴɪᴋᴀ!...",
+        "✅ Started!"
+    ]:
         await asyncio.sleep(0.5)
-        await m.edit_text("🎊")
+        await m.edit_text(text)
 
 
-        await asyncio.sleep(0.5)
-        await m.edit_text("🚀")
+    await m.delete()
 
 
-        await asyncio.sleep(0.5)
-        await m.edit_text(
-            "sᴜɴ ɢᴏᴅ ɴɪᴋᴀ!..."
-        )
-
-
-        await asyncio.sleep(0.5)
-        await m.delete()
-
-
-        await message.reply_sticker(
-            "CAACAgQAAxkBAAPZafuA9gQjLstGU0j8kmlDj2-P2A0AAqoaAALVH9BRmAWPD58ZL6keBA"
-        )
-
-
-    await run_animation()
+    await message.reply_sticker(
+        "CAACAgQAAxkBAAPZafuA9gQjLstGU0j8kmlDj2-P2A0AAqoaAALVH9BRmAWPD58ZL6keBA"
+    )
 
 
     await client.send_photo(
         message.chat.id,
         photo=START_IMAGE,
-        caption=START_TEXT,
+        caption=START_TEXT.format(
+            mention=message.from_user.mention
+        ),
+        parse_mode="html",
         reply_markup=buttons()
     )
 
-# ------------------------- #
-# Don't Remove Credit 
-# Owner @Mr_Mohammed_29
-# ------------------------- #
 
 # ------------------------- #
 # ABOUT
@@ -125,8 +117,8 @@ async def start(client, message):
 @Client.on_callback_query(
     filters.regex("about")
 )
-async def about(client, query):
 
+async def about(client, query):
 
     about_buttons = InlineKeyboardMarkup(
         [
@@ -147,6 +139,7 @@ async def about(client, query):
         query.message.chat.id,
         photo=START_IMAGE,
         caption=ABOUT_TEXT,
+        parse_mode="html",
         reply_markup=about_buttons
     )
 
@@ -158,6 +151,7 @@ async def about(client, query):
 @Client.on_callback_query(
     filters.regex("home")
 )
+
 async def home(client, query):
 
     await query.message.delete()
@@ -166,7 +160,10 @@ async def home(client, query):
     await client.send_photo(
         query.message.chat.id,
         photo=START_IMAGE,
-        caption=START_TEXT,
+        caption=START_TEXT.format(
+            mention=query.from_user.mention
+        ),
+        parse_mode="html",
         reply_markup=buttons()
     )
 
