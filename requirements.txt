@@ -1,0 +1,15 @@
+# ------------------------- #
+# Don't Remove Credit 
+# Owner @Mr_Mohammed_29
+# ------------------------- #
+
+pyrogram==2.0.106
+tgcrypto
+motor
+flask
+gunicorn
+
+# ------------------------- #
+# Don't Remove Credit 
+# Owner @Mr_Mohammed_29
+# ------------------------- #
