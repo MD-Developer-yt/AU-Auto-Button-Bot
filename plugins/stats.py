@@ -61,17 +61,17 @@ async def stats_text():
     users = await count_users()
 
     return f"""
-📊 <b>Bot Statistics</b>
+📊 <b>Bᴏᴛ Sᴛᴀᴛɪsᴛɪᴄs</b>
 
-👤 Users : <code>{users}</code>
+👤 Usᴇʀs : <code>{users}</code>
 
-📤 Posts : <code>{TOTAL_POSTS}</code>
+📤 Tᴏᴛᴀʟ Pᴏsᴛs : <code>{TOTAL_POSTS}</code>
 
-🏓 Ping : <code>Online</code>
+🏓 Pɪɴɢ : <code>Online</code>
 
-⚙️ Version : <code>v3 Stable</code>
+⚙️ Vᴇʀsɪᴏɴ : <code>v3 Stable</code>
 
-⏳ Uptime :
+⏳ Uᴘᴛɪᴍᴇ :
 <code>{uptime()}</code>
 """
 
