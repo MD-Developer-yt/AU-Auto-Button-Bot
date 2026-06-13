@@ -4,6 +4,7 @@
 # ------------------------- #
 
 import plugins.thumbnail as thumb
+import plugins.stats as stats
 
 from pyrogram import (
     Client,
@@ -124,6 +125,10 @@ async def post(_, message):
                 thumb=thumb.THUMBNAIL,
                 reply_markup=keyboard
             )
+
+
+        # Increase total posts
+        stats.TOTAL_POSTS += 1
 
 
         await message.reply_text(
