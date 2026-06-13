@@ -1,0 +1,58 @@
+# ------------------------- #
+# Don't Remove Credit 
+# Owner @Mr_Mohammed_29
+# ------------------------- #
+
+id="kbyml"
+app:
+  name: au-auto-button-bot
+
+# ------------------------- #
+# Don't Remove Credit 
+# Owner @Mr_Mohammed_29
+# ------------------------- #
+
+services:
+  - name: bot
+    type: web
+    instance_type: nano
+    regions:
+      - fra
+
+    git:
+      repository: https://github.com/Coder-yt/AU-Auto-Button-Bot
+      branch: main
+
+    build:
+      type: dockerfile
+
+    ports:
+      - port: 8000
+        protocol: http
+
+    env:
+      - key: BOT_TOKEN
+        value: ""
+
+      - key: API_ID
+        value: ""
+
+      - key: API_HASH
+        value: ""
+
+      - key: OWNER_ID
+        value: "7284759394"
+
+      - key: CHANNEL_ID
+        value: "-1004055876401"
+
+      - key: MONGO_URI
+        value: ""
+
+      - key: LOG_CHANNEL
+        value: ""
+
+# ------------------------- #
+# Don't Remove Credit 
+# Owner @Mr_Mohammed_29
+# ------------------------- #
