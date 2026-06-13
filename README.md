@@ -59,13 +59,18 @@
 
 ## 📌 Commands
 
-````txt
+<pre id="commandsBox">
 start        - Start Bot
 stats        - Show bot statistics (Owner & Admin)
 broadcast    - Send message to users (Owner & Admin)
 addadmin     - Add admin (Owner only)
 removeadmin  - Remove admin (Owner only)
 admins       - List admins (Owner only)
+</pre>
+
+<button onclick="navigator.clipboard.writeText(document.getElementById('commandsBox').innerText)">
+📋 Copy Commands
+</button>
 
 
 # 🚀 Deployment Guide
