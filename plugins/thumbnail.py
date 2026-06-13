@@ -22,7 +22,7 @@ async def set_thumbnail(client, message):
 
     if not message.reply_to_message or not message.reply_to_message.photo:
         return await message.reply_text(
-            "Reply to an image to set thumbnail."
+            "Rᴇᴘʟʏ ᴛᴏ ᴀɴ ɪᴍᴀɢᴇ ᴛᴏ sᴇᴛ ᴛʜᴜᴍʙɴᴀɪʟ."
         )
 
     # download and store local file path (IMPORTANT for video/document thumb)
@@ -30,7 +30,7 @@ async def set_thumbnail(client, message):
         file_name="thumb.jpg"
     )
 
-    await message.reply_text("✅ Thumbnail saved")
+    await message.reply_text("✅ Tʜᴜᴍʙɴᴀɪʟ Sᴀᴠᴇᴅ")
 
 # ------------------------- #
 # Don't Remove Credit 
